@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Picture Album</title>
+
+    <!-- BootStrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- external styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color: rgba(0, 0, 0, 0.4)">
+        <a class="navbar-brand" href="#">Photo Album</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <div class="filter-buttons">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button data-filter="all" class="btn btn-link nav-link">All</button>
+                    </li>
+                    <li class="nav-item">
+                        <button data-filter="category1" class="btn btn-link nav-link">World Heritage Sites in
+                            India</button>
+                    </li>
+                    <li class="nav-item">
+                        <button data-filter="category2" class="btn btn-link nav-link">Indian Festivals</button>
+                    </li>
+
+                    <!-- dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Explore More
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <button data-filter="category3" class="btn btn-link dropdown-item">Shiv Jyotirlinga</button>
+                            <button data-filter="category4" class="btn btn-link dropdown-item">Visit India</button>
+                            <button data-filter="category5" class="btn btn-link dropdown-item">Traditional Dances</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- album container -->
+    <div class="album-container container">
+        <!-- picture items -->
+        <div class="picture-grid row justify-content-center">
+            <!-- Picture items will go here -->
+        </div>
+        <!-- load-more button -->
+        <button id="load-more" class="btn btn-primary mt-3">Load More</button>
+    </div>
+
+    <!-- lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <!-- lightbox image -->
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- BootStrap JS and more -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
