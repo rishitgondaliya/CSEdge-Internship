@@ -99,7 +99,7 @@ section {
     display: flex;
 }
 
-#work .title {
+#work .work-title {
     width: 100%;
     font-size: 44px;
     font-weight: bold;
@@ -169,29 +169,54 @@ footer span {
 .edu-img img {
     height: 600px;
     width: 100%;
+    margin-left: -30px;
 }
 
-.card-title {
-    background-color: rgba(14, 107, 168, 0.467);
+.degree, .hsc, .ssc {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 5px #d9dbdf;
+    padding-bottom: 4px;
 }
+
+.title {
+    color: rgb(0, 28, 85);
+    background-color: rgba(14, 107, 168, 0.467);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dur {
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.branch {
+    font-size: 16px;
+    margin-top: 8px;
+}
+
 .edu-info {
     width: 50%;
     padding: 32px;
 }
 
-.edu-title {
-    font-size: 20px;
-    font-weight: bold;
-    padding: 8px;
+.edu-detail {
+    margin: 16px;
 }
 
-.degree, .hsc, .ssc {
-    /* border: 1px solid black;
-    border-radius: 8px; */
-    margin-bottom: 16px;
+.edu-detail ul li{
+    margin-bottom: 8px;
 }
 
-.edu-title p {
-    font-size: 18px;
-    margin: 4px 0;
+.visit {
+    display: flex;
+    justify-content: end;
+    margin-top: -12px;
 }
