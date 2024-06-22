@@ -12,3 +12,13 @@ document.querySelectorAll('.pro').forEach(div => {
         }
     })
 })
+
+const menuIcon = document.getElementById('menuIcon');
+const navLinks = document.getElementById('navLinks');
+const body = document.body;
+
+menuIcon.addEventListener('click', function () {
+    navLinks.classList.toggle('show');
+    body.classList.toggle('expanded');
+    menuIcon.classList.toggle('opened');
+});
