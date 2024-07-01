@@ -1,24 +1,41 @@
-AOS.init({
-    duration: 1500, // Animation duration in milliseconds
-    offset: 100,    // Offset (in pixels) from the original trigger point
-    once: false     // Animation should appear both on scroll up and down
-});
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS with your desired configuration
+    AOS.init({
+        duration: 1500,
+        offset: 100,
+        once: false
+    });
 
-document.querySelectorAll('.pro').forEach(div => {
-    div.addEventListener('click', function () {
-        const url = this.getAttribute('data-url');
-        if (url) {
-            window.open(url, '_blank');
+    // Event listener for .pro elements
+    document.querySelectorAll('.pro').forEach(div => {
+        div.addEventListener('click', function () {
+            const url = this.getAttribute('data-url');
+            if (url) {
+                window.open(url, '_blank');
+            }
+        });
+    });
+
+    // Event listener for navbar toggler
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const mainContent = document.querySelector('#main-content');
+    const navbarCollapse = document.querySelector('#navbarNavAltMarkup');
+
+    function adjustMainContentMargin() {
+        const isVisible = navbarCollapse.classList.contains('show');
+        if (isVisible) {
+            const navbarHeight = navbarCollapse.scrollHeight;
+            mainContent.style.marginTop = `${navbarHeight}px`;
+        } else {
+            mainContent.style.marginTop = '0';
         }
-    })
-})
+    }
 
-const menuIcon = document.getElementById('menuIcon');
-const navLinks = document.getElementById('navLinks');
-const body = document.body;
+    navbarToggler.addEventListener('click', function() {
+        adjustMainContentMargin();
+    });
 
-menuIcon.addEventListener('click', function () {
-    navLinks.classList.toggle('show');
-    body.classList.toggle('expanded');
-    menuIcon.classList.toggle('opened');
+    // Listen for collapse events to adjust margin when toggling is done
+    navbarCollapse.addEventListener('shown.bs.collapse', adjustMainContentMargin);
+    navbarCollapse.addEventListener('hidden.bs.collapse', adjustMainContentMargin);
 });
