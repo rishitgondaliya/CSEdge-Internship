@@ -6,4 +6,4 @@ This Interactive Photo Album Offers Seamless Filtering, Stunning Lightbox Displa
 
 ![Picture Album](assets/ss.png)
 
-Visit for live demo: ![Interactive-Picture-Album](https://picture-album.netlify.app/)
+Visit for live demo: [Interactive-Picture-Album](https://picture-album.netlify.app/)
