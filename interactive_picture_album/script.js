@@ -95,8 +95,57 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentItems = 0;
     const itemsPerLoad = 4;
     let currentFilter = 'all';
+    
+    // choose category
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // remove active class from all filter buttons and add to the clicked button only
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            filterItems(button.getAttribute('data-filter'));
 
-    // create picture
+            // Update the dropdown text if the clicked button is in the dropdown menu
+            if (button.classList.contains('dropdown-item')) {
+                navbarDropdown.textContent = button.textContent;
+                navbarDropdown.style.textDecoration = 'underline';
+            } else {
+                navbarDropdown.style.textDecoration = 'none';
+            }
+        });
+    });
+
+    // filter picture album
+    function filterItems(filter) {
+        pictureGrid.innerHTML = ''; // Clear the grid
+        currentItems = 0; // Reset the item counter
+        currentFilter = filter; // Update the current filter
+        loadItems(); // Load the filtered items
+    }
+
+    // load selected picture album
+    function loadItems() {
+        const fragment = document.createDocumentFragment();
+
+        // load pictures of selected category
+        const filteredItems = items.filter(item => currentFilter === 'all' || item.category === currentFilter);
+
+        for (let i = currentItems; i < currentItems + itemsPerLoad && i < filteredItems.length; i++) {
+            const item = createPictureItem(filteredItems[i]);
+            fragment.appendChild(item);
+        }
+
+        pictureGrid.appendChild(fragment);
+        currentItems += itemsPerLoad;
+
+        // check all pictures loaded or not
+        if (currentItems >= filteredItems.length) {
+            loadMoreButton.style.display = 'none';
+        } else {
+            loadMoreButton.style.display = 'block';
+        }
+    }
+
+    // create picture item
     function createPictureItem(item) {
         const container = document.createElement('div');
         container.classList.add('picture-container');
@@ -124,54 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return container;
     }
 
-    function loadItems() {
-        const fragment = document.createDocumentFragment();
-
-        // load pictures of selected category
-        const filteredItems = items.filter(item => currentFilter === 'all' || item.category === currentFilter);
-
-        for (let i = currentItems; i < currentItems + itemsPerLoad && i < filteredItems.length; i++) {
-            const item = createPictureItem(filteredItems[i]);
-            fragment.appendChild(item);
-        }
-
-        pictureGrid.appendChild(fragment);
-        currentItems += itemsPerLoad;
-
-        // check all pictures loaded or not
-        if (currentItems >= filteredItems.length) {
-            loadMoreButton.style.display = 'none';
-        } else {
-            loadMoreButton.style.display = 'block';
-        }
-    }
-
-    function filterItems(filter) {
-        pictureGrid.innerHTML = ''; // Clear the grid
-        currentItems = 0; // Reset the item counter
-        currentFilter = filter; // Update the current filter
-        loadItems(); // Load the filtered items
-    }
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // remove active class from all filter buttons and add to the clicked button only
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            filterItems(button.getAttribute('data-filter'));
-
-            // Update the dropdown text if the clicked button is in the dropdown menu
-            if (button.classList.contains('dropdown-item')) {
-                navbarDropdown.textContent = button.textContent;
-                navbarDropdown.style.textDecoration = 'underline';
-            } else {
-                navbarDropdown.style.textDecoration = 'none';
-            }
-        });
-    });
-
+    // load more pictures
     loadMoreButton.addEventListener('click', loadItems);
 
+    // lightbox
     closeLightbox.addEventListener('click', () => {
         lightbox.classList.add('fade-out'); // Apply fade-out animation
         setTimeout(() => {
