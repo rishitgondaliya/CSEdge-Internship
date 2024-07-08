@@ -15,49 +15,19 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <style>
-      .dept {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 15px;
-        display: flex;
-        border-left: 1px solid #00008b;
-      }
-
-      #departments {
-        margin: 20px auto;
-      }
-
-      .depTitle {
-        margin-top: 2rem;
-      }
-
-      .image-kasturbhai {
-        max-width: calc(250px + (750 - 400) * (100vw - 320px) / (1920 - 320));
-      }
-
-      .image-chemical-eng {
-        max-width: 250px;
-      }
-
-      .dept img {
-        height: 250px;
-        width: auto;
-        margin-left: 0.5rem;
-      }
-
-      .deptInfo {
-        padding: 1rem;
-        font-size: 18px;
-        margin: auto;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <div class="ldheader">
       <div class="logo">
-        <img src="./assets/ldlogo.png" style="height: 100px; width: 100px" />
+        <img src="./assets/ldlogo.png" />
       </div>
       <div class="ldname">
         L. D. College of Engineering
@@ -69,20 +39,19 @@
     </div>
     <nav>
       <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="faculty.html">Faculty</a>
       <a href="#departments">Departments</a>
       <a href="activity.html">Activities</a>
-      <a href="about.html">About</a>
     </nav>
 
     <div class="container" id="departments">
-      <h3 class="depTitle">LDCE Principal office</h3>
-      <div class="dept">
+      <h3 class="depTitle" data-aos="fade-up">LDCE Principal office</h3>
+      <div class="dept" id="dept1" data-aos="fade-up">
         <div>
           <img
             src="./assets/departments/image-ldce-office.jpg"
             alt="Principal Office image"
-            class="image-kasturbhai"
           />
         </div>
         <div class="deptInfo">
@@ -94,12 +63,11 @@
           educational landscape of India.
         </div>
       </div>
-
-      <h3 class="depTitle">Applied Mechanics</h3>
-      <div class="dept">
+      <h3 class="depTitle" data-aos="fade-up">Applied Mechanics</h3>
+      <div class="dept" id="dept2" data-aos="fade-up">
         <div class="deptInfo">
           The Department of Applied Mechanics is a vital offshoot of Civil
-          Engineering Program at L .D .College of Engineering. Applied Mechanics
+          Engineering Program at L. D. College of Engineering. Applied Mechanics
           department has a distinguished and technically well-versed faculty
           imbued with a sense of commitment and sincerity. As the HOD of the
           department it is a matter of immense pride to bring to you the
@@ -109,25 +77,19 @@
           Master’s Degree.
         </div>
         <div>
-          <div>
-            <img
-              src="./assets/departments/applied-mechanics.jpeg"
-              alt="Principal Office image"
-              class="image-kasturbhai"
-            />
-          </div>
+          <img
+            src="./assets/departments/applied-mechanics.jpeg"
+            alt="Principal Office image"
+          />
         </div>
       </div>
-      <h3 class="depTitle">Computer Engineering</h3>
-      <div class="dept">
+      <h3 class="depTitle" data-aos="fade-up">Computer Engineering</h3>
+      <div class="dept" id="dept3" data-aos="fade-up">
         <div>
-          <div>
-            <img
-              src="./assets/departments/computer-engineering.jpeg"
-              alt="Principal Office image"
-              class="image-kasturbhai"
-            />
-          </div>
+          <img
+            src="./assets/departments/computer-engineering.jpeg"
+            alt="Principal Office image"
+          />
         </div>
         <div class="deptInfo">
           Computer engineering is the fastest developing discipline in the
@@ -141,8 +103,8 @@
           software, Embedded Systems.
         </div>
       </div>
-      <h3 class="depTitle">Information Technology</h3>
-      <div class="dept">
+      <h3 class="depTitle" data-aos="fade-up">Information Technology</h3>
+      <div class="dept" id="dept4" data-aos="fade-up">
         <div class="deptInfo">
           To shape the young minds of aspiring Information Technology engineers
           to become the front runner in the sustainable technological growth of
@@ -157,25 +119,19 @@
           sensible towards their social responsibilities.
         </div>
         <div>
-          <div>
-            <img
-              src="./assets/departments/information-technology.jpg"
-              alt="Principal Office image"
-              class="image-kasturbhai"
-            />
-          </div>
+          <img
+            src="./assets/departments/information-technology.jpg"
+            alt="Principal Office image"
+          />
         </div>
       </div>
-      <h3 class="depTitle">Mechanical Engineering</h3>
-      <div class="dept">
+      <h3 class="depTitle" data-aos="fade-up">Mechanical Engineering</h3>
+      <div class="dept" id="dept5" data-aos="fade-up">
         <div>
-          <div>
-            <img
-              src="./assets/departments/mechanical-engineering.jpeg"
-              alt="Principal Office image"
-              class="image-kasturbhai"
-            />
-          </div>
+          <img
+            src="./assets/departments/mechanical-engineering.jpeg"
+            alt="Principal Office image"
+          />
         </div>
         <div class="deptInfo">
           Mechanical Engineering encompasses areas such as energy, fluid
@@ -189,5 +145,12 @@
       </div>
     </div>
     <footer>Copyright &copy; 2024 L. D. College of Engineering</footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>

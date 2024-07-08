@@ -23,85 +23,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>
-
-    <style>
-      h3 {
-        margin: 20px;
-      }
-
-      .principal {
-        display: flex;
-        margin: auto 2.5rem;
-        border: 1px solid black;
-        border-radius: 8px;
-      }
-
-      .principal .image {
-        width: 20%;
-        margin-left: 1rem;
-      }
-
-      .principal img {
-        height: 250px;
-        margin: 8px;
-      }
-
-      .principal .disc {
-        width: 70%;
-        margin: auto 20px;
-      }
-
-      .hod {
-        border: 1px solid black;
-        border-radius: 8px;
-        margin: auto 2.5rem 1rem;
-      }
-
-      .cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-      }
-
-      .hod .card,
-      .hidden .card {
-        width: 15rem;
-        margin: 1rem auto;
-      }
-
-      .hod .card img,
-      .hidden .card img {
-        height: 15rem;
-      }
-
-      .btn {
-        margin: 1rem auto;
-        font-size: 20px;
-      }
-
-      .seeall,
-      .seeless {
-        text-align: center;
-      }
-
-      .hidden {
-        display: none;
-      }
-
-      .faculty {
-        border: 1px solid black;
-        border-radius: 8px;
-        margin: auto 2.5rem 2rem;
-        padding: 1rem;
-        font-size: 20px;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="ldheader">
       <div class="logo">
-        <img src="./assets/ldlogo.png" style="height: 100px; width: 100px" />
+        <img src="./assets/ldlogo.png" />
       </div>
       <div class="ldname">
         L. D. College of Engineering
@@ -113,170 +47,181 @@
     </div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="faculty.html">Faculty</a>
+      <a href="about.html">About</a>
+      <a href="#faculty">Faculty</a>
       <a href="department.html">Departments</a>
       <a href="activity.html">Activities</a>
-      <a href="about.html">About</a>
     </nav>
 
-    <h3>Honourable Principal</h3>
-    <div class="principal">
-      <div class="image">
-        <img
-          src="./assets/Feculty/dr. nilay sir.png"
-          style="border-radius: 8px"
-        />
-      </div>
-      <div class="disc">
-        <h4>Dr. Nilay N. Bhuptani</h4>
-        <h5>Principal</h5>
-        He brings a wealth of experience and a strong academic background to his
-        role as Principal at LD College of Engineering. With an illustrious
-        career spanning various leadership positions in academia and government,
-        Dr. Bhuptani has played a pivotal role in shaping the landscape of
-        technical education in Gujarat. His tenure as Principal at Vishvakarma
-        Government Engineering College and his contributions as Joint Director
-        of Technical Education for the Government of Gujarat underscore his
-        commitment to excellence and innovation in higher education.
-      </div>
-    </div>
-    <h3>Head of Departments</h3>
-    <div class="hod">
-      <div class="cards">
-        <div class="card">
+    <div id="faculty">
+      <h3 data-aos="fade-up">Honourable Principal</h3>
+      <div class="principal" data-aos="fade-up">
+        <div class="image">
           <img
-            src="./assets/Feculty/Hiteishi-Diwanji-head-it.jpg"
-            class="card-img-top"
-            alt="..."
+            src="./assets/Feculty/dr. nilay sir.png"
+            style="border-radius: 8px"
           />
-          <div class="card-body">
-            <h5 class="card-title">Dr. Hiteishi Diwanji</h5>
-            <p class="card-text">Information Technology</p>
-          </div>
         </div>
-        <div class="card">
-          <img
-            src="./assets/Feculty/Manish-Thakker-head-ic.jpeg"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Manish Thakkar</h5>
-            <p class="card-text">Instrumental & Control Engineering</p>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="./assets/Feculty/Major Chaitanya-Sanghvi-applied-mechanics-hod.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Dr. Chaitanya Sanghavi</h5>
-            <p class="card-text">Applied Mechanics</p>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="./assets/Feculty/Chirag S.-Thaker-chirag.thakar-ce.jpeg"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Chirag Thakkar</h5>
-            <p class="card-text">Computer Engineering</p>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src="./assets/Feculty/Rajesh-Jain-drrajesh.jain-civil.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Rajesh Jain</h5>
-            <p class="card-text">Civil Engineering</p>
-          </div>
+        <div class="disc">
+          <h4>Dr. Nilay N. Bhuptani</h4>
+          <h5>Principal</h5>
+          <p>
+            He brings a wealth of experience and a strong academic background to
+            his role as Principal at LD College of Engineering. With an
+            illustrious career spanning various leadership positions in academia
+            and government, Dr. Bhuptani has played a pivotal role in shaping
+            the landscape of technical education in Gujarat. His tenure as
+            Principal at Vishvakarma Government Engineering College and his
+            contributions as Joint Director of Technical Education for the
+            Government of Gujarat underscore his commitment to excellence and
+            innovation in higher education.
+          </p>
         </div>
       </div>
-      <div class="seeall">
-        <button class="btn btn-primary">See All</button>
-      </div>
-      <div class="hidden">
-        <div class="cards">
+      <h3 data-aos="fade-up">Head of Departments</h3>
+      <div class="hod" data-aos="fade-up">
+        <div class="cards" data-aos="fade-up">
           <div class="card">
             <img
-              src="./assets/Feculty/Vikramkumar-Patel-mechanical.jpg"
+              src="./assets/Feculty/Hiteishi-Diwanji-head-it.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Vikramkumar PAtel</h5>
-              <p class="card-text">Mechanical Engineering</p>
+              <h5 class="card-title">Dr. Hiteishi Diwanji</h5>
+              <p class="card-text">Information Technology</p>
             </div>
           </div>
           <div class="card">
             <img
-              src="./assets/Feculty/Manish-Thakker-Biomedical-eng.png"
+              src="./assets/Feculty/Manish-Thakker-head-ic.jpeg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
               <h5 class="card-title">Manish Thakkar</h5>
-              <p class="card-text">BioMedical Engineering</p>
+              <p class="card-text">Instrumental & Control Engineering</p>
             </div>
           </div>
           <div class="card">
             <img
-              src="./assets/Feculty/CHANDULAL-VITHALANI-ec-eng.png"
+              src="./assets/Feculty/Major Chaitanya-Sanghvi-applied-mechanics-hod.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Chandulal Viththlani</h5>
-              <p class="card-text">Electronics & Communication Engi.</p>
+              <h5 class="card-title">Dr. Major Chaitanya Sanghavi</h5>
+              <p class="card-text">Applied Mechanics</p>
             </div>
           </div>
           <div class="card">
             <img
-              src="./assets/Feculty/Gaurang-Ban-Environmental-eng.png"
+              src="./assets/Feculty/Chirag S.-Thaker-chirag.thakar-ce.jpeg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Gaurang Ban</h5>
-              <p class="card-text">Environmental Engineering</p>
+              <h5 class="card-title">Chirag Thakkar</h5>
+              <p class="card-text">Computer Engineering</p>
             </div>
           </div>
           <div class="card">
             <img
-              src="./assets/Feculty/KETAN-BADGUJAR-Electrical-eng.jpg"
+              src="./assets/Feculty/Rajesh-Jain-drrajesh.jain-civil.jpg"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h5 class="card-title">Ketan Badgujar</h5>
-              <p class="card-text">Electrical Engineering</p>
+              <h5 class="card-title">Rajesh Jain</h5>
+              <p class="card-text">Civil Engineering</p>
             </div>
           </div>
         </div>
-        <div class="seeless">
-          <button class="btn btn-primary">See Less</button>
+        <div class="seeall" data-aos="fade-up">
+          <button class="btn btn-primary">See All</button>
+        </div>
+        <div class="hidden">
+          <div class="cards">
+            <div class="card">
+              <img
+                src="./assets/Feculty/Vikramkumar-Patel-mechanical.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Vikramkumar PAtel</h5>
+                <p class="card-text">Mechanical Engineering</p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./assets/Feculty/Manish-Thakker-Biomedical-eng.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Manish Thakkar</h5>
+                <p class="card-text">BioMedical Engineering</p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./assets/Feculty/CHANDULAL-VITHALANI-ec-eng.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Chandulal Viththlani</h5>
+                <p class="card-text">Electronics & Communication Engi.</p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./assets/Feculty/Gaurang-Ban-Environmental-eng.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Gaurang Ban</h5>
+                <p class="card-text">Environmental Engineering</p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./assets/Feculty/KETAN-BADGUJAR-Electrical-eng.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Ketan Badgujar</h5>
+                <p class="card-text">Electrical Engineering</p>
+              </div>
+            </div>
+          </div>
+          <div class="seeless">
+            <button class="btn btn-primary">See Less</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <h3>Faculties</h3>
-    <div class="faculty">
-      <p>
-        Faculty of LDCE is a team of highly qualified and experienced professionals who are dedicated to imparting knowledge
-        and skills to the students. Our faculty members are experts in their respective fields and have a strong
-        research background. They are committed to providing a supportive and stimulating learning environment that
-        fosters intellectual growth and development of our students.
-        <a href="https://ldce.ac.in/upload/pdf/legal/LDCE-Faculty-Staff-List.pdf" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">See List</a>
-    </p>
+      <h3 data-aos="fade-up">Faculties</h3>
+      <div class="faculty" data-aos="fade-up">
+        <p>
+          Faculty of LDCE is a team of highly qualified and experienced
+          professionals who are dedicated to imparting knowledge and skills to
+          the students. Our faculty members are experts in their respective
+          fields and have a strong research background. They are committed to
+          providing a supportive and stimulating learning environment that
+          fosters intellectual growth and development of our students.
+          <a
+            href="https://ldce.ac.in/upload/pdf/legal/LDCE-Faculty-Staff-List.pdf"
+            target="_blank"
+            style="text-decoration: none; color: black; font-weight: bold"
+            >See List</a
+          >
+        </p>
+      </div>
     </div>
-
     <footer>Copyright &copy; 2024 L. D. College of Engineering</footer>
 
     <script>
@@ -286,6 +231,7 @@
 
       allBtn.addEventListener("click", function () {
         allBtn.style.display = "none";
+        lessBtn.style.display = "block";
         cardHidden.style.display = "inherit";
       });
 
@@ -295,5 +241,12 @@
         allBtn.style.display = "inherit";
       });
     </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>
